@@ -4,6 +4,7 @@ import numpy as np
 import holidays
 import json
 print("Loading dataset...")
+
 # Load the data
 df = pd.read_csv('AEP_hourly.csv')
 
