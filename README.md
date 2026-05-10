@@ -18,3 +18,24 @@ Follow these steps to get the full predictive pipeline running on your local mac
 Ensure you have **Python 3.13+** installed. Install the required data science and server libraries using pip:
 
 pip install pandas scikit-learn flask flask-cors holidays numpy
+
+Step 2: Prepare the Data
+Place the historical grid telemetry file (AEP_hourly.csv) directly in the root directory of the project.
+
+Step 3: Train the AI Model
+Run the model script to perform feature engineering, train the Random Forest, and export the 48-hour predictions to a JSON payload.
+
+python model.py
+
+(Wait for the console to display the MAPE/RMSE scores and the ✅ Done! Data safely exported message).
+
+Step 4: Start the API Server
+Launch the Flask backend to serve the predictions to the frontend dashboard.
+
+python app.py
+The REST API will now be live and listening at: http://127.0.0.1:5000/api/forecast
+
+Step 5: View the Dashboard
+With the Flask server running in the terminal, simply double-click your index.html file to open it in any web browser. The JavaScript will instantly fetch the payload from the local API and render the UI.
+
+Architectural Note: This system utilizes a decoupled microservice pattern. The model (model.py) pre-calculates the AI inference payload, which the lightweight Flask server (app.py) serves dynamically. This ensures the frontend dashboard loads instantly without waiting for model retraining.
