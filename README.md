@@ -37,6 +37,6 @@ python app.py
 The REST API will now be live and listening at: http://127.0.0.1:5000/api/forecast
 
 Step 5: View the Dashboard
-With the Flask server running in the terminal, simply double-click your index.html file to open it in any web browser. The JavaScript will instantly fetch the payload from the local API and render the UI.
+With the Flask server running in the terminal, simply double-click your grid.html file to open it in any web browser. The JavaScript will instantly fetch the payload from the local API and render the UI.
 
 Architectural Note: This system utilizes a decoupled microservice pattern. The model (model.py) pre-calculates the AI inference payload, which the lightweight Flask server (app.py) serves dynamically. This ensures the frontend dashboard loads instantly without waiting for model retraining.
