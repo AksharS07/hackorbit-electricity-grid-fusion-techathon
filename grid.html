@@ -8,6 +8,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.splash-screen{
+    position: fixed;
+    inset: 0;
+    background: #0a0f0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    overflow:hidden;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.splash-screen h1{
+    color: #00ff78;
+    font-size: 3rem;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(0,255,120,0.5);
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+
+    90%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+}
+
 
   :root {
     --bg: #0a0f0d;
@@ -292,10 +329,13 @@
 </style>
 </head>
 <body>
+    <div class="splash-screen" id="splashScreen">
+    <h1>⚡ WattWise AI</h1>
+</div>
 
 <header>
   <div class="logo-block">
-    <h1>⚡ Smart Grid AI</h1>
+    <h1>⚡ WattWise AI</h1>
     <p>Electricity Demand Forecasting · AEP Dataset</p>
   </div>
   <div class="status-pill">
