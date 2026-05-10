@@ -1,16 +1,20 @@
-# techathon-electricity-grid-fusion-techathon
-How to Run
-Follow these steps to get the full pipeline running on your local machine:
-1. Prerequisites
-Ensure you have Python 3.13+ installed. Install the required libraries using:
+# ⚡ WattWise AI: Predictive Grid Dashboard
+
+An AI-driven predictive digital twin for electrical grids. This decoupled machine learning microservice uses a Random Forest Regressor to forecast energy demand 48 hours in advance, allowing grid operators to proactively balance load, minimize Peaker Plant usage, and prevent blackouts.
+
+## 🚀 System Architecture
+* **Backend Intelligence:** Scikit-Learn (Random Forest, 50 Estimators)
+* **Feature Engineering:** Cyclical time encoding (Sin/Cos), synthetic thermal distributions, and boolean holiday flagging.
+* **API Microservice:** Python Flask REST API (CORS enabled)
+* **Frontend UI:** Vanilla JS, CSS Splash Animations, and Chart.js for real-time visualization.
+
+---
+
+## 🛠️ How to Run Locally
+
+Follow these steps to get the full predictive pipeline running on your local machine.
+
+### Step 1: Prerequisites
+Ensure you have **Python 3.13+** installed. Install the required data science and server libraries using pip:
+
 pip install pandas scikit-learn flask flask-cors holidays numpy
-2. Prepare the Data
-Place the AEP_hourly.csv file in the root directory of the project.
-3. Train the AI Model
-Run the model script to perform feature engineering, train the Random Forest, and export the predictions to JSON:
-python model.py
-Wait for the "✅ Done! Data safely exported" message.
-4. Start the API Server
-Launch the Flask backend to serve the predictions to the frontend:
-python app.py
-The API will be live at http://127.0.0.1:5000/api/forecast.
